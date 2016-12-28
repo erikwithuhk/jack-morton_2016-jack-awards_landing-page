@@ -1,3 +1,64 @@
-body {
-  background-color: crimson;
+.case-study-list,
+.filter-list {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.case-study-list {
+  width: 75%;
+}
+
+.case-study__video iframe {
+  width: 100%;
+}
+
+.filter-list {
+  margin-left: 6%;
+  position: fixed;
+  text-align: right;
+  width: 18%;
+}
+
+.filter-group {
+  background-color: #dddee0;
+  font-weight: normal;
+  list-style-type: none;
+  margin: 0 0 1em !important;
+  padding: 0;
+}
+
+.filter-group--expanded {
+  padding-bottom: 0.5em;
+}
+
+.filter-group--expanded li {
+  display: list-item;
+}
+
+.filter-group__name,
+.filter-group__item {
+  cursor: pointer;
+  margin: 0.25em 0;
+  padding: 0.375em 0.5em;
+}
+
+.filter-group__name {
+  background-color: #333d47;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+}
+
+.filter-group__item {
+  float: right;
+  clear: both;
+  display: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.filter-group__item:hover,
+.filter-group__item--selected {
+  background-color: #ff5000;
+  color: #fff;
 }
