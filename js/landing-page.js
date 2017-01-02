@@ -9,7 +9,7 @@ function expandFilterList() {
 }
 
 function applyFilter(node) {
-  console.log(node.classList);
+  // console.log(node.classList);
 }
 
 function selectFilter() {

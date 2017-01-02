@@ -1,7 +1,12 @@
+.inner-container {
+  position: relative;
+}
+
 .case-study-list,
 .filter-list {
   box-sizing: border-box;
   display: inline-block;
+  font-size: 16px;
   vertical-align: top;
 }
 
@@ -17,7 +22,13 @@
   display: none;
 }
 
+.case-study__video {
+  padding-bottom: 56.25%;
+  width: 100%;
+}
+
 .case-study__video iframe {
+  height: 100%;
   width: 100%;
 }
 
@@ -53,10 +64,22 @@
 }
 
 .filter-list {
+  animation-name: slide-from-left;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
   margin-left: 6%;
   position: fixed;
   text-align: right;
   width: 18%;
+}
+
+@keyframes slide-from-left {
+  0% {
+    margin-left: 150%;
+  }
+  100% {
+    margin-left: 6%;
+  }
 }
 
 .filter-group {
@@ -89,10 +112,12 @@
 
 .filter-group__icon {
   float: left;
+  transform: rotate(-90deg);
+  transition: transform 0.1s ease-in-out;
 }
 
 .filter-group--expanded .filter-group__icon {
-  transform: rotate(90deg);
+  transform: rotate(0deg);
 }
 
 .filter-group__name {
@@ -114,13 +139,16 @@
 
 .filter-group__item p {
   display: inline-block;
+  margin-bottom: 0;
 }
 
-.filter-group__item-deselect-icon {
+.filter-group__item i {
   display: none;
 }
 
 .filter-group__item--selected .filter-group__item-deselect-icon {
+  display: inline-block;
+  padding: 0.5em;
 }
 
 .filter-group__item:hover p,
@@ -130,8 +158,7 @@
   color: #fff;
 }
 
-.filter-group__item--selected:hover .filter-group__item-deselect-icon {
-  background-color: #fff;
-  color: #ff5000;
-  display: inline-block;
+.filter-group__item--selected:hover p {
+  background-color: #ff9362;
+  color: #fff;
 }
