@@ -12,7 +12,7 @@ function selectFilter() {
   const filterItems = document.querySelectorAll('.filter-group__item');
   filterItems.forEach(function(filterItem) {
     filterItem.addEventListener('click', function(e) {
-      e.target.classList.toggle('filter-group__item--selected');
+      e.target.parentElement.classList.toggle('filter-group__item--selected');
     });
   });
 }

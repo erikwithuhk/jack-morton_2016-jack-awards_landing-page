@@ -6,11 +6,12 @@
 }
 
 .case-study-list {
+  display: none;
   width: 75%;
 }
 
 .case-study__video iframe {
-  width: 100%;
+  width: 25%;
 }
 
 .filter-list {
@@ -40,7 +41,20 @@
 .filter-group__item {
   cursor: pointer;
   margin: 0.25em 0;
+}
+
+.filter-group__name,
+.filter-group__item p,
+.filter-group__item-deselect-icon {
   padding: 0.375em 0.5em;
+}
+
+.filter-group__icon {
+  float: left;
+}
+
+.filter-group--expanded .filter-group__icon {
+  transform: rotate(90deg);
 }
 
 .filter-group__name {
@@ -54,11 +68,32 @@
   float: right;
   clear: both;
   display: none;
+}
+
+.filter-group__item * {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.filter-group__item:hover,
-.filter-group__item--selected {
+.filter-group__item p {
+  display: inline-block;
+}
+
+.filter-group__item-deselect-icon {
+  display: none;
+}
+
+.filter-group__item--selected .filter-group__item-deselect-icon {
+}
+
+.filter-group__item:hover p,
+.filter-group__item--selected p,
+.filter-group__item--selected .filter-group__item-deselect-icon {
   background-color: #ff5000;
   color: #fff;
+}
+
+.filter-group__item--selected:hover .filter-group__item-deselect-icon {
+  background-color: #fff;
+  color: #ff5000;
+  display: inline-block;
 }
