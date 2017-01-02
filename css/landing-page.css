@@ -6,12 +6,11 @@
 .filter-list {
   box-sizing: border-box;
   display: inline-block;
-  font-size: 16px;
   vertical-align: top;
 }
 
 .case-study-list {
-  width: 75%;
+  width: 660px;
 }
 
 .case-study {
@@ -24,11 +23,16 @@
 
 .case-study__video {
   padding-bottom: 56.25%;
+  position: relative;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
 .case-study__video iframe {
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 
@@ -37,8 +41,14 @@
   width: 60%;
 }
 
+.case-study__details h3,
+.case-study__details p {
+  font-size: 1.125rem;
+}
+
 .case-study__cta {
   float: right;
+  font-size: 1.25rem;
   text-align: right;
   width: 40%;
 }
@@ -67,10 +77,10 @@
   animation-name: slide-from-left;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
-  margin-left: 6%;
+  margin-left: 50px;
   position: fixed;
   text-align: right;
-  width: 18%;
+  width: 150px;
 }
 
 @keyframes slide-from-left {
@@ -78,8 +88,12 @@
     margin-left: 150%;
   }
   100% {
-    margin-left: 6%;
+    margin-left: 50px;
   }
+}
+
+.filter-list {
+  font-size: 0.875rem;
 }
 
 .filter-group {
