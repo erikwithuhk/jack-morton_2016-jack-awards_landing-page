@@ -1,3 +1,14 @@
+class AwardsPage {
+  constructor() {
+    this.caseStudies = caseStudiesData;
+  }
+  render() {
+  }
+}
+
+const awardsPage = new AwardsPage();
+awardsPage.render();
+
 function expandFilterList() {
   const filterGroupHeaders = document.querySelectorAll('.filter-group__name');
   filterGroupHeaders.forEach(function (filterGroupHeader) {
