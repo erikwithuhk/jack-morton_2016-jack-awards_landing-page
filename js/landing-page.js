@@ -8,11 +8,17 @@ function expandFilterList() {
   });
 }
 
+function applyFilter(node) {
+  console.log(node.classList);
+}
+
 function selectFilter() {
   const filterItems = document.querySelectorAll('.filter-group__item');
   filterItems.forEach(function(filterItem) {
     filterItem.addEventListener('click', function(e) {
-      e.target.parentElement.classList.toggle('filter-group__item--selected');
+      const parentElement = e.target.parentElement;
+      parentElement.classList.toggle('filter-group__item--selected');
+      applyFilter(parentElement);
     });
   });
 }

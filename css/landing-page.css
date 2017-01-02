@@ -6,12 +6,50 @@
 }
 
 .case-study-list {
-  display: none;
   width: 75%;
 }
 
+.case-study {
+  margin-bottom: 2em;
+}
+
+.case-study--hidden {
+  display: none;
+}
+
 .case-study__video iframe {
-  width: 25%;
+  width: 100%;
+}
+
+.case-study__details {
+  float: left;
+  width: 60%;
+}
+
+.case-study__cta {
+  float: right;
+  text-align: right;
+  width: 40%;
+}
+
+.case-study__cta button {
+  background-color: #ff5000;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 0.5em 1em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.case-study__cta button:hover {
+  background-color: #e64900;
+}
+
+.details__project::after {
+  content: '–';
+  color: #ff5000;
+  display: block;
 }
 
 .filter-list {
