@@ -1,12 +1,26 @@
 class AwardsPage {
+  constructor() {
+    this.filterOn = false;
+  }
   getCaseStudies() {
     this.caseStudies = caseStudiesData.map((caseStudyData) => {
       return new CaseStudy(caseStudyData);
     });
   }
   render() {
-    this.caseStudies.forEach((caseStudy) => {
-      caseStudy.render();
+    const caseStudyList = document.querySelector('.case-study-list');
+    caseStudyList.innerHTML = '';
+    let filteredCaseStudies;
+    if (this.filterOn) {
+      filteredCaseStudies = this.caseStudies.filter((caseStudy) => {
+        return !caseStudy.isHidden();
+      });
+      console.log(filteredCaseStudies);
+    } else {
+      filteredCaseStudies = this.caseStudies;
+    }
+    filteredCaseStudies.forEach((caseStudy) => {
+      caseStudy.render(caseStudyList);
     });
   }
 }

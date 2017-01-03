@@ -14,8 +14,7 @@ class CaseStudy {
   isHidden() {
     return this.hidden;
   }
-  render() {
-    const caseStudyList = document.querySelector('.case-study-list');
+  render(parentNode) {
     const caseStudyNode = document.createElement('div');
     caseStudyNode.setAttribute('class', 'case-study clearfix');
     caseStudyNode.innerHTML = `
@@ -31,6 +30,6 @@ class CaseStudy {
         <a href="${this.myJackLink}"><button type="button" name="button">View the case study</button></a>
       </div>
       `;
-    caseStudyList.append(caseStudyNode);
+    parentNode.append(caseStudyNode);
   }
 }
