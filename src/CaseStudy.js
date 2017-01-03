@@ -31,7 +31,7 @@ class CaseStudy {
           <p class="details__office">${this.offices.join(', ')}</p>
         </div>
         <div class="case-study__cta">
-          <a href="${this.myJackLink}"><button type="button" name="button">View the case study</button></a>
+          <a href="${this.myJackLink}" target="_blank"><button type="button" name="button">View the case study</button></a>
         </div>
       </div>
       `;
