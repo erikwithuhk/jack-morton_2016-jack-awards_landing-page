@@ -60,8 +60,16 @@ class AwardsPage {
       return new CaseStudy(caseStudyData);
     });
   }
+  addStickyFilterListener(filterList) {
+    const origOffsetY = filterList.offsetTop;
+    document.addEventListener('scroll', () => {
+      window.scrollY >= origOffsetY ? filterList.classList.add('sticky') :
+                                      filterList.classList.remove('sticky');
+    });
+  }
   renderFilters() {
     const filterList = document.querySelector('.filter-list');
+    this.addStickyFilterListener(filterList);
     this.filters.forEach((filter) => {
       filter.render(filterList);
     });

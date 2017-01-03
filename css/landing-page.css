@@ -1,5 +1,5 @@
-.inner-container {
-  position: relative;
+.sticky {
+  position: fixed;
 }
 
 .case-study-list,
@@ -81,8 +81,11 @@
   animation-name: slide-from-left;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
+  float: right;
   margin-left: 50px;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
   text-align: right;
   width: 150px;
 }
