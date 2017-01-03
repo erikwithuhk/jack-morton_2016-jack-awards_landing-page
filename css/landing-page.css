@@ -53,6 +53,10 @@
   width: 40%;
 }
 
+.case-study__cta a {
+  font-weight: normal;
+}
+
 .case-study__cta button {
   background-color: #ff5000;
   border: none;

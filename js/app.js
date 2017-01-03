@@ -1,12 +1,18 @@
 class AwardsPage {
-  constructor() {
-    this.caseStudies = caseStudiesData;
+  getCaseStudies() {
+    this.caseStudies = caseStudiesData.map((caseStudyData) => {
+      return new CaseStudy(caseStudyData);
+    });
   }
   render() {
+    this.caseStudies.forEach((caseStudy) => {
+      caseStudy.render();
+    });
   }
 }
 
 const awardsPage = new AwardsPage();
+awardsPage.getCaseStudies();
 awardsPage.render();
 
 function expandFilterList() {
