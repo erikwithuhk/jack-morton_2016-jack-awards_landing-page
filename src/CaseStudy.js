@@ -35,6 +35,6 @@ class CaseStudy {
         </div>
       </div>
       `;
-    parentNode.append(caseStudyNode);
+    parentNode.appendChild(caseStudyNode);
   }
 }

@@ -34,7 +34,7 @@ class FilterGroup {
       ${this.capitalize(this.name)}
     `;
     this.setHeaderClickListener(headerNode);
-    this.filterNode.append(headerNode);
+    this.filterNode.appendChild(headerNode);
   }
   renderItems() {
     const sortedItems = this.itemsData.sort((a, b) => a > b);
@@ -53,6 +53,6 @@ class FilterGroup {
     this.filterNode.setAttribute('class', 'filter-group clearfix');
     this.renderHeader();
     this.renderItems();
-    parentNode.append(this.filterNode);
+    parentNode.appendChild(this.filterNode);
   }
 }

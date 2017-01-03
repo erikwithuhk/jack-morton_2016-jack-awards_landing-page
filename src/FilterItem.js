@@ -25,6 +25,6 @@ class FilterItem {
       <i class="filter-group__item-deselect-icon fa fa-times" aria-hidden="true"></i><p>${this.value}</p>
     `;
     this.setItemClickListener(this.itemNode);
-    parentNode.append(this.itemNode);
+    parentNode.appendChild(this.itemNode);
   }
 }
