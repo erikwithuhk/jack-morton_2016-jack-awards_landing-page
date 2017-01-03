@@ -1,11 +1,11 @@
 class CaseStudy {
-  constructor({client, project, offices, categories, myJackLink, videoURL}) {
+  constructor({client, project, offices, categories, myJackLink, videoID}) {
     this.client = client;
     this.project = project;
     this.offices = offices;
     this.categories = categories;
     this.myJackLink = myJackLink;
-    this.videoURL = videoURL;
+    this.videoID = videoID;
     this.hidden = false;
   }
   isHidden() {
@@ -22,11 +22,11 @@ class CaseStudy {
     caseStudyNode.setAttribute('class', 'case-study clearfix');
     caseStudyNode.innerHTML = `
       <div class="case-study__video">
-        <iframe src="${this.videoURL}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/${this.videoID}?color=ff5000&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
       <div class="case-study__information clearfix">
         <div class="case-study__details">
-          <h3 class="details__client">Client: ${this.client}</h3>
+          <h3 class="details__client">${this.client}</h3>
           <h3 class="details__project">${this.project}</h3>
           <p class="details__office">${this.offices.join(', ')}</p>
         </div>
