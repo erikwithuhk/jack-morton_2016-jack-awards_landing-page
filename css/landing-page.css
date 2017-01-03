@@ -37,10 +37,19 @@
 }
 
 .case-study__information {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .case-study__details {
@@ -75,6 +84,7 @@
   cursor: pointer;
   font: inherit;
   padding: 0.5em 1em;
+  -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -89,9 +99,12 @@
 }
 
 .filter-list {
-  animation-name: slide-from-left;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-name: slide-from-left;
+          animation-name: slide-from-left;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
   float: right;
   margin-left: 50px;
   position: -webkit-sticky;
@@ -99,6 +112,15 @@
   top: 10px;
   text-align: right;
   width: 150px;
+}
+
+@-webkit-keyframes slide-from-left {
+  0% {
+    margin-left: 150%;
+  }
+  100% {
+    margin-left: 50px;
+  }
 }
 
 @keyframes slide-from-left {
@@ -144,12 +166,17 @@
 
 .filter-group__icon {
   float: left;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: -webkit-transform 0.1s ease-in-out;
+  transition: -webkit-transform 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
 }
 
 .filter-group--expanded .filter-group__icon {
-  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .filter-group__name {
@@ -166,6 +193,7 @@
 }
 
 .filter-group__item * {
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 

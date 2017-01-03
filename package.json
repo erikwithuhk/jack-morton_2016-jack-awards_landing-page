@@ -1,0 +1,24 @@
+{
+  "name": "jack-morton_2016-jack-awards_landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikwithuhk/jack-morton_2016-jack-awards_landing-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikwithuhk/jack-morton_2016-jack-awards_landing-page/issues"
+  },
+  "homepage": "https://github.com/erikwithuhk/jack-morton_2016-jack-awards_landing-page#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-env": "^1.1.4"
+  }
+}
