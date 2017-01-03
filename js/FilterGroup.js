@@ -1,9 +1,23 @@
 class FilterGroup {
-  constructor({filterData, capitalize, slugify}) {
+  constructor({ filterData, capitalize, renderCaseStudies }) {
     this.name = filterData.name;
-    this.items = filterData.items;
+    this.itemsData = filterData.items;
+    this.items = [];
+    this.filterOn = false;
     this.capitalize = capitalize;
-    this.slugify = slugify;
+    this.renderCaseStudies = renderCaseStudies;
+  }
+  isOn() {
+    this.filterOn = false;
+    this.items.forEach((item) => {
+      if (item.isOn()) {
+        this.filterOn = true;
+      }
+    });
+    return this.filterOn;
+  }
+  getAppliedFilters() {
+    return this.items.filter(item => item.isOn()).map(filter => filter.value);
   }
   setHeaderClickListener(headerNode) {
     headerNode.addEventListener('click', (e) => {
@@ -23,11 +37,14 @@ class FilterGroup {
     this.filterNode.append(headerNode);
   }
   renderItems() {
-    this.items.forEach((item) => {
+    const sortedItems = this.itemsData.sort((a, b) => a > b);
+    this.itemsData.forEach((itemData) => {
       const filterItem = new FilterItem({
-        name: item,
-        slugify: this.slugify,
+        value: itemData,
+        type: this.name,
+        renderCaseStudies: this.renderCaseStudies,
       });
+      this.items.push(filterItem);
       filterItem.render(this.filterNode);
     });
   }

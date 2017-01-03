@@ -11,8 +11,11 @@ class CaseStudy {
   isHidden() {
     return this.hidden;
   }
-  toggleHidden() {
-    this.hidden ? this.hidden = false : this.hidden = true;
+  hide() {
+    this.hidden = true;
+  }
+  show() {
+    this.hidden = false;
   }
   render(parentNode) {
     const caseStudyNode = document.createElement('div');

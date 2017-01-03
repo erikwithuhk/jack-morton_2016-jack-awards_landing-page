@@ -1,13 +1,13 @@
 const filterData = [
   {
-    name: 'office',
+    name: 'offices',
     items: [
       'New York',
       'Australia',
     ],
   },
   {
-    name: 'category',
+    name: 'categories',
     items: [
       'Creative',
       'Effectiveness',
