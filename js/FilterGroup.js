@@ -1,8 +1,9 @@
 class FilterGroup {
-  constructor({name, items}, capitalize) {
-    this.name = name;
-    this.items = items;
+  constructor({filterData, capitalize, slugify}) {
+    this.name = filterData.name;
+    this.items = filterData.items;
     this.capitalize = capitalize;
+    this.slugify = slugify;
   }
   setHeaderClickListener(headerNode) {
     headerNode.addEventListener('click', (e) => {
@@ -21,21 +22,13 @@ class FilterGroup {
     this.setHeaderClickListener(headerNode);
     this.filterNode.append(headerNode);
   }
-  setItemClickListener(itemNode) {
-    itemNode.addEventListener('click', function(e) {
-      const parentElement = e.target.parentElement;
-      parentElement.classList.toggle('filter-group__item--selected');
-    });
-  }
   renderItems() {
     this.items.forEach((item) => {
-      const itemNode = document.createElement('li');
-      itemNode.setAttribute('class', 'filter-group__item');
-      itemNode.innerHTML = `
-        <i class="filter-group__item-deselect-icon fa fa-times" aria-hidden="true"></i><p>${this.capitalize(item)}</p>
-      `;
-      this.setItemClickListener(itemNode);
-      this.filterNode.append(itemNode);
+      const filterItem = new FilterItem({
+        name: item,
+        slugify: this.slugify,
+      });
+      filterItem.render(this.filterNode);
     });
   }
   render(parentNode) {

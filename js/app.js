@@ -9,9 +9,20 @@ class AwardsPage {
     });
     return capitalizedWords.join(' ');
   }
+  slugify(string) {
+    const words = string.split(' ');
+    const lowercaseWords = words.map((word) => {
+      return word.toLowerCase();
+    });
+    return lowercaseWords.join('-');
+  }
   getFilters() {
     this.filters = filterData.map((filterData) => {
-      return new FilterGroup(filterData, this.capitalize);
+      return new FilterGroup({
+        filterData,
+        capitalize: this.capitalize,
+        slugify: this.slugify,
+      });
     });
   }
   getCaseStudies() {
