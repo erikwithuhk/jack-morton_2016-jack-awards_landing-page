@@ -24,13 +24,15 @@ class CaseStudy {
       <div class="case-study__video">
         <iframe src="${this.videoURL}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
-      <div class="case-study__details">
-        <h3 class="details__client">Client: ${this.client}</h3>
-        <h3 class="details__project">${this.project}</h3>
-        <p class="details__office">${this.offices.join(', ')}</p>
-      </div>
-      <div class="case-study__cta">
-        <a href="${this.myJackLink}"><button type="button" name="button">View the case study</button></a>
+      <div class="case-study__information clearfix">
+        <div class="case-study__details">
+          <h3 class="details__client">Client: ${this.client}</h3>
+          <h3 class="details__project">${this.project}</h3>
+          <p class="details__office">${this.offices.join(', ')}</p>
+        </div>
+        <div class="case-study__cta">
+          <a href="${this.myJackLink}"><button type="button" name="button">View the case study</button></a>
+        </div>
       </div>
       `;
     parentNode.append(caseStudyNode);

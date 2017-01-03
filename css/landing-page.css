@@ -36,6 +36,13 @@
   width: 100%;
 }
 
+.case-study__information {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 .case-study__details {
   float: left;
   width: 60%;
@@ -44,6 +51,10 @@
 .case-study__details h3,
 .case-study__details p {
   font-size: 1.125rem;
+}
+
+.case-study__details p {
+  margin-bottom: 0;
 }
 
 .case-study__cta {
