@@ -20,6 +20,12 @@ class AwardsPage {
     });
     return lowercaseWords.join('-');
   }
+  linkStyleSheet() {
+    const stylesheetNode = document.createElement('link');
+    stylesheetNode.rel = 'stylesheet';
+    stylesheetNode.href = 'http://myjack.jackmorton.com/css/landing-page_2016-jack-awards.css';
+    document.querySelector('head').appendChild(stylesheetNode);
+  }
   applyFilters() {
     this.caseStudies.forEach((caseStudy) => {
       this.filters.forEach((filterGroup) => {
@@ -96,6 +102,7 @@ class AwardsPage {
 }
 
 const awardsPage = new AwardsPage();
+awardsPage.linkStyleSheet();
 awardsPage.getFilters();
 awardsPage.renderFilters();
 awardsPage.getCaseStudies();
