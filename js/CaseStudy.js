@@ -8,11 +8,11 @@ class CaseStudy {
     this.videoURL = videoURL;
     this.hidden = false;
   }
-  toggleHidden() {
-    this.hidden ? this.hidden = false : this.hidden = true;
-  }
   isHidden() {
     return this.hidden;
+  }
+  toggleHidden() {
+    this.hidden ? this.hidden = false : this.hidden = true;
   }
   render(parentNode) {
     const caseStudyNode = document.createElement('div');
