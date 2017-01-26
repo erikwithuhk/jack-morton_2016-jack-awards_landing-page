@@ -4,15 +4,17 @@ const caseStudiesData = [
     project: 'Project 1',
     offices: ['New York', 'Australia'],
     categories: ['Creative'],
+    awards: [],
     myJackLink: '#',
-    videoURL: 'https://player.vimeo.com/video/112068458?color=ff5000&title=0&byline=0&portrait=0',
+    videoID: 112068458,
   },
   {
     client: 'Client 2',
     project: 'Project 2',
     offices: ['Australia'],
     categories: ['Effectiveness', 'Creative'],
+    awards: [],
     myJackLink: '#',
-    videoURL: 'https://player.vimeo.com/video/112068458?color=ff5000&title=0&byline=0&portrait=0',
+    videoID: 112068458,
   }
 ];

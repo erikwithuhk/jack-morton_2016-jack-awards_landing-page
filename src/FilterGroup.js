@@ -20,7 +20,7 @@ class FilterGroup {
     return this.items.filter(item => item.isOn()).map(filter => filter.value);
   }
   setHeaderClickListener(headerNode) {
-    headerNode.addEventListener('click', (e) => {
+    headerNode.addEventListener('click', () => {
       this.filterNode.classList.toggle('filter-group--expanded');
     });
   }
@@ -37,7 +37,9 @@ class FilterGroup {
     this.filterNode.appendChild(headerNode);
   }
   renderItems() {
-    const sortedItems = this.itemsData.sort((a, b) => a > b);
+    if (this.name !== 'award') {
+      this.itemsData.sort((a, b) => a > b);
+    }
     this.itemsData.forEach((itemData) => {
       const filterItem = new FilterItem({
         value: itemData,

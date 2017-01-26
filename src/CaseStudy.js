@@ -1,9 +1,10 @@
 class CaseStudy {
-  constructor({client, project, offices, categories, myJackLink, videoID}) {
+  constructor({ client, project, offices, categories, awards, myJackLink, videoID }) {
     this.client = client;
     this.project = project;
     this.offices = offices;
     this.categories = categories;
+    this.awards = awards;
     this.myJackLink = myJackLink;
     this.videoID = videoID;
     this.hidden = false;

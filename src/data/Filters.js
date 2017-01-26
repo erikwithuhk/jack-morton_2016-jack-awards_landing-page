@@ -12,5 +12,13 @@ const filterData = [
       'Creative',
       'Effectiveness',
     ],
-  }
+  },
+  {
+    name: 'awards',
+    items: [
+      'Gold',
+      'Silver',
+      'Bronze',
+    ],
+  },
 ];

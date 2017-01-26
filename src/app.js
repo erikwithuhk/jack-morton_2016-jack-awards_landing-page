@@ -32,6 +32,7 @@ class AwardsPage {
       this.filters.forEach((filterGroup) => {
         const appliedFilters = filterGroup.getAppliedFilters();
         appliedFilters.forEach((filter) => {
+          console.log({ caseStudy, filterGroup });
           if (caseStudy[filterGroup.name].includes(filter)) {
             caseStudy.show();
           }
