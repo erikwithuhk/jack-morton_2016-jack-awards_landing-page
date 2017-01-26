@@ -23,8 +23,8 @@ class AwardsPage {
   linkStyleSheet() {
     const stylesheetNode = document.createElement('link');
     stylesheetNode.rel = 'stylesheet';
-    stylesheetNode.href = 'css/landing-page.css';
-    // stylesheetNode.href = 'http://myjack.jackmorton.com/css/landing-page_2016-jack-awards.css';
+    // stylesheetNode.href = 'css/landing-page.css';
+    stylesheetNode.href = 'http://myjack.jackmorton.com/css/landing-page_2016-jack-awards.css';
     document.querySelector('head').appendChild(stylesheetNode);
   }
   applyFilters() {
