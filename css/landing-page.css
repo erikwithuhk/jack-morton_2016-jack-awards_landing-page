@@ -54,6 +54,10 @@
   width: 50%;
 }
 
+.award--left {
+  border-right: 1px solid #fff;
+}
+
 .award--gold {
   background-color: #d4af37;
 }

@@ -37,9 +37,6 @@ class FilterGroup {
     this.filterNode.appendChild(headerNode);
   }
   renderItems() {
-    if (this.name !== 'awards') {
-      this.itemsData.sort((a, b) => a > b);
-    }
     this.itemsData.forEach((itemData) => {
       const filterItem = new FilterItem({
         value: itemData,
