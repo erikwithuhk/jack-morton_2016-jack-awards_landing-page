@@ -1,10 +1,11 @@
 class CaseStudy {
-  constructor({ client, project, offices, categories, awards, myJackLink, videoID }) {
+  constructor({ client, project, offices, categories, awards, awardsList, myJackLink, videoID }) {
     this.client = client;
     this.project = project;
     this.offices = offices;
     this.categories = categories;
     this.awards = awards;
+    this.awardsList = awardsList;
     this.myJackLink = myJackLink;
     this.videoID = videoID;
     this.hidden = false;
@@ -18,6 +19,24 @@ class CaseStudy {
   show() {
     this.hidden = false;
   }
+  renderAwards() {
+    let awardNodes = [];
+    if (this.awardsList.length === 2) {
+      awardNodes = this.awardsList.map((award, index) => {
+        const position = index === 0 ? 'left' : 'right';
+        return `<div class="award award--double award--${position} award--${award.level.toLowerCase()}">
+            ${award.level}: ${award.category}
+          </div>`;
+      });
+    } else {
+      awardNodes = this.awardsList.map(award => `
+          <div class="award award--${award.level.toLowerCase()}">
+            ${award.level}: ${award.category}
+          </div>
+      `);
+    }
+    return awardNodes.join('');
+  }
   render(parentNode) {
     const caseStudyNode = document.createElement('div');
     caseStudyNode.setAttribute('class', 'case-study clearfix');
@@ -25,6 +44,7 @@ class CaseStudy {
       <div class="case-study__video">
         <iframe src="https://player.vimeo.com/video/${this.videoID}?color=ff5000&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
+      ${this.renderAwards()}
       <div class="case-study__information clearfix">
         <div class="case-study__details">
           <h3 class="details__client">${this.client}</h3>
